@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PriceController;
+
 // use App\Models\Service;
 
 
@@ -34,6 +36,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 Route::get('/productlist',[ServiceController::class,'list']);
 Route ::get('/item/{id}',[ServiceController::class,'getItem']);
 Route ::put('/itemupdate/{id}',[ServiceController::class,'UpdateItem']);
+Route ::post('/addprice',[PriceController::class,'addPrice']);
+Route::get('/pricelist',[PriceController::class,'list']);
 
 
 
