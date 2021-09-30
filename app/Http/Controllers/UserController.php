@@ -28,6 +28,14 @@ class UserController extends Controller
         
              return response($response, 201);
     }
+    /*refresh token
+     public function refresh(Request $request)
+    {
+        $user = $request->user();
+        $user->tokens()->delete();
+        return response()->json(['token' => $user->createToken($user->name)->plainTextToken]);
+    }
+    */
 }
 
 

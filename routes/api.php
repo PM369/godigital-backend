@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PriceController;
+use App\Http\Controllers\TechController;
 
 // use App\Models\Service;
 
@@ -28,6 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:sanctum'], function(){
     //All secure URL's
     Route ::post('/addservice',[ServiceController::class,'addService']);
+    Route ::post('/addtech',[TechController::class,'addTech']);
     Route ::delete('/delete/{id}',[ServiceController::class,'delete']);
    
    
@@ -38,6 +40,7 @@ Route ::get('/item/{id}',[ServiceController::class,'getItem']);
 Route ::put('/itemupdate/{id}',[ServiceController::class,'UpdateItem']);
 Route ::post('/addprice',[PriceController::class,'addPrice']);
 Route::get('/pricelist',[PriceController::class,'list']);
+Route::get('/techlist',[TechController::class,'Techlist']);
 
 
 
